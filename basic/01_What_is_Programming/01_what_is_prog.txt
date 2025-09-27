@@ -1,0 +1,27 @@
+What is Programming?
+---------------------
+
+At its core:
+Programming is the process of giving instructions to a computer so it can perform specific tasks.
+- Just like you give a recipe to a cook,
+- In programming, you give step-by-step instructions (a program) to a computer.
+
+Formal definition:
+Programming is the act of designing and writing code (in languages like C++, Python, Java, etc.) that tells a computer what to do and how to do it.
+
+Why we need programming:
+- Computers are fast but dumb — they can’t “think” on their own.
+- Programming lets humans express logic, solve problems, and automate tasks using a language computers understand.
+
+Example:
+If you want a computer to add two numbers:
+
+- In English: “Take 5 and 7, then show me their sum.”
+- In Python (a programming language):
+    print(5 + 7)
+
+Analogy:
+Think of programming like teaching a robot:
+- You break a task into small steps,
+- Write those steps in a language it understands,
+- And the robot follows them exactly — no guessing, no skipping.
