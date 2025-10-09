@@ -1,14 +1,13 @@
 /******************************************************************************
 
                               بسم الله الرحمان الرحيم
-author:mfaiz_1
+author:mconq(Mohd_Faiz)
 
 *******************************************************************************/
 
 #include <bits/stdc++.h>
-using namespace std;
-using int64 = long long;
 
+using namespace std;
 
 #define int            long long int
 #define F              first
@@ -75,56 +74,9 @@ void __f (const char* names, Arg1&& arg1, Args&&... args)
 }
 
 const int N = 200005;
-// Check if a given H is feasible
-bool feasible(long long H, int N, long long X, const vector<long long> &U, const vector<long long> &D) {
-    vector<long long> L(N), R(N);
-    for (int i = 0; i < N; i++) {
-        L[i] = max(0LL, H - D[i]);
-        R[i] = min(U[i], H);
-        if (L[i] > R[i]) return false; // impossible at this point
-    }
-
-    long long curL = L[0], curR = R[0];
-    for (int i = 1; i < N; i++) {
-        long long newL = max(L[i], curL - X);
-        long long newR = min(R[i], curR + X);
-        if (newL > newR) return false;
-        curL = newL;
-        curR = newR;
-    }
-    return true;
-}
 
 void solve() {
-    int N;
-    long long X;
-    cin >> N >> X;
-
-    vector<long long> U(N), D(N);
-    long long total = 0;
-    for (int i = 0; i < N; i++) {
-        cin >> U[i] >> D[i];
-        total += U[i] + D[i];
-    }
-
-    long long low = 0, high = LLONG_MAX;
-    // Tighter high bound = min(U[i] + D[i])
-    high = U[0] + D[0];
-    for (int i = 1; i < N; i++) high = min(high, U[i] + D[i]);
-
-    long long bestH = 0;
-    while (low <= high) {
-        long long mid = (low + high) / 2;
-        if (feasible(mid, N, X, U, D)) {
-            bestH = mid;
-            low = mid + 1; // try larger H
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    long long answer = total - (long long)N * bestH;
-    cout << answer << "\n";
+    
 }
 
 int32_t main()
@@ -146,9 +98,3 @@ int32_t main()
 
     return 0;
 }
-
-
-
-
-    
-
